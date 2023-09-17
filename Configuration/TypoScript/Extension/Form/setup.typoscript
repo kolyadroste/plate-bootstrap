@@ -1,0 +1,18 @@
+# FORM FRAMEWORK
+plugin.tx_form {
+    settings {
+        yamlConfigurations {
+            1682944994 =  EXT:plate_bootstrap/Configuration/Forms/formBaseConfig.yaml
+        }
+    }
+}
+
+module.tx_form {
+    settings {
+        yamlConfigurations {
+            1682944994 = EXT:plate_bootstrap/Configuration/Forms/formBaseConfig.yaml
+        }
+    }
+}
+
+

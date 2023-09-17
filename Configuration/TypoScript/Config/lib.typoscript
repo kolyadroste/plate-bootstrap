@@ -1,0 +1,83 @@
+lib.getCol = CONTENT
+lib.getCol{
+    table = tt_content
+    select {
+        pidInList.field = uid
+        where.dataWrap = colPos = {field:column}
+        orderBy = sorting
+    }
+    renderObj = < tt_content
+    wrap =
+    stdWrap =
+}
+lib.getSlideCol < lib.getCol
+lib.getSlideCol{
+    slide = -1
+    slide {
+        collect = 0
+        collectReverse = 0
+        collectFuzzy = 0
+    }
+}
+
+lib.getElement = COA
+lib.getElement{
+    10 = RECORDS
+    10{
+        tables=tt_content
+        source.field = uid
+        //source = 26
+        dontCheckPid = 1
+    }
+}
+lib.hasSubpages = TEXT
+lib.hasSubpages{
+    numRows {
+        table = pages
+        select{
+            pidInList.data = field:uid
+        }
+    }
+}
+lib.pageNameById = TEXT
+lib.pageNameById{
+    data = field:uid
+    wrap = {DB:pages:|:title}
+    insertData = 1
+
+}
+lib.getMediaImgSlide = COA
+lib.getMediaImgSlide{
+    1 = TEXT
+    1.value = test:
+    5 = TEXT
+    5.data = levelfield: 1, media, slide
+    10 = FILES
+    10 {
+        references {
+            data = levelfield: 1, media, slide
+        }
+
+        renderObj = IMAGE
+        renderObj {
+            file.import.dataWrap = {file:current:storage}:{file:current:identifier}
+            altText.data = file:current:title
+            wrap = <div class="banner">|</div>
+        }
+    }
+}
+
+lib.templateName = TEXT
+lib.templateName.stdWrap {
+    cObject = TEXT
+    cObject {
+        data = levelfield:-1,backend_layout_next_level,slide
+        override.field = backend_layout
+        split {
+            token = pagets__
+            1.current = 1
+            1.wrap = |
+        }
+    }
+    ifEmpty = Default
+}

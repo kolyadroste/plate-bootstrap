@@ -1,0 +1,133 @@
+// disable default BS Cookie Consent
+page.theme.cookieconsent.enable = 0
+
+# BOOTSTRAP 5.x
+plugin.bootstrap_package.settings.scss >
+
+# CUSTOM SUBCATEGORIES
+# customsubcategory=bp5_001=Grayscale
+# customsubcategory=bp5_002=Colors
+# customsubcategory=bp5_003=Contrast
+# customsubcategory=bp5_004=Body
+# customsubcategory=bp5_005=Links
+# customsubcategory=bp5_006=Fonts
+# customsubcategory=bp5_007=Überschriften
+# customsubcategory=bp5_010=Options
+
+plugin.bootstrap_package {
+    settings {
+        offcanvasLeft{
+            # cat=bootstrap Package: OffCanvas/bp1_001/001; type=string; label=ID Offcanvas Left: Place your Content there to be shown in the Offcanvas Left
+            pageId =
+        }
+        scss {
+            # cat=bootstrap 5.x: styling/bp5_001/001; type=string; label=$white:
+            white = #ffffff
+            # cat=bootstrap 5.x: styling/bp5_001/002; type=string; label=$gray-100:
+            gray-100 = #f8f8f8
+            # cat=bootstrap 5.x: styling/bp5_001/003; type=string; label=$gray-200:
+            gray-200 = #e9e9e9
+            # cat=bootstrap 5.x: styling/bp5_001/004; type=string; label=$gray-300:
+            gray-300 = #dedede
+            # cat=bootstrap 5.x: styling/bp5_001/005; type=string; label=$gray-400:
+            gray-400 = #cecece
+            # cat=bootstrap 5.x: styling/bp5_001/006; type=string; label=$gray-500:
+            gray-500 = #ababab
+            # cat=bootstrap 5.x: styling/bp5_001/007; type=string; label=$gray-600:
+            gray-600 = #6c6c6c
+            # cat=bootstrap 5.x: styling/bp5_001/008; type=string; label=$gray-700:
+            gray-700 = #494949
+            # cat=bootstrap 5.x: styling/bp5_001/009; type=string; label=$gray-800:
+            gray-800 = #313131
+            # cat=bootstrap 5.x: styling/bp5_001/010; type=string; label=$gray-900:
+            gray-900 = #212121
+            # cat=bootstrap 5.x: styling/bp5_001/011; type=string; label=$black:
+            black = #000000
+
+            # cat=bootstrap 5.x: styling/bp5_002/001; type=string; label=$primary:
+            primary = #1779ba
+            # cat=bootstrap 5.x: styling/bp5_002/004; type=string; label=$primary RGB:
+            primary-rgb = red($primary), green($primary), blue($primary)
+            # cat=bootstrap 5.x: styling/bp5_002/005; type=string; label=$secondary:
+            secondary = #e76f51
+            # cat=bootstrap 5.x: styling/bp5_002/006; type=string; label=$secondary RGB:
+            secondary-rgb = red($secondary), green($secondary), blue($secondary)
+            # cat=bootstrap 5.x: styling/bp5_002/007; type=string; label=$tertiary:
+            tertiary = #eeeeee
+            # cat=bootstrap 5.x: styling/bp5_002/008; type=string; label=$quaternary:
+            quaternary = #e9c46a
+
+            # cat=bootstrap 5.x: styling/bp5_002/009; type=string; label=$default:
+            default = #eaebec
+            # cat=bootstrap 5.x: styling/bp5_002/010; type=string; label=$success:
+            success = #5cb85c
+            # cat=bootstrap 5.x: styling/bp5_002/011; type=string; label=$info:
+            info = $gray-600
+            # cat=bootstrap 5.x: styling/bp5_002/012; type=string; label=$warning:
+            warning = #f0ad4e
+            # cat=bootstrap 5.x: styling/bp5_002/013; type=string; label=$danger:
+            danger = #d9534f
+            # cat=bootstrap 5.x: styling/bp5_002/014; type=string; label=$lighter:
+            lighter = $gray-100
+            # cat=bootstrap 5.x: styling/bp5_002/015; type=string; label=$light:
+            light = $gray-200
+            # cat=bootstrap 5.x: styling/bp5_002/016; type=string; label=$dark:
+            dark = $gray-800
+            # cat=bootstrap 5.x: styling/bp5_002/017; type=string; label=$darker:
+            darker = $gray-900
+
+            # cat=bootstrap 5.x: styling/bp5_003/001; type=string; label=$min-contrast-ratio:
+            min-contrast-ratio = 2.4
+
+            # cat=bootstrap 5.x: styling/bp5_004/001; type=string; label=$body-bg:
+            body-bg = $white
+            # cat=bootstrap 5.x: styling/bp5_004/002; type=string; label=$body-color:
+            body-color = $gray-900
+
+            # cat=bootstrap 5.x: styling/bp5_005/001; type=string; label=$link-color:
+            link-color = $primary
+            # cat=bootstrap 5.x: styling/bp5_005/002; type=string; label=$link-shade-percentage:
+            link-shade-percentage = 20%
+            # cat=bootstrap 5.x: styling/bp5_005/003; type=string; label=$link-hover-color:
+            link-hover-color = shift-color($link-color, $link-shade-percentage)
+
+            # cat=bootstrap 5.x: styling/bp5_006/001; type=string; label=$font-family-sans-serif:
+            font-family-sans-serif = "#{$google-webfont}", sans-serif
+            # cat=bootstrap 5.x: styling/bp5_006/002; type=string; label=$font-family-monospace:
+            font-family-monospace = SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            # cat=bootstrap 5.x: styling/bp5_006/003; type=string; label=$base-font-weight:
+            body-font-weight = 300;
+            # cat=bootstrap 5.x: styling/bp5_006/004; type=string; label=$base-font-size:
+            base-font-size = 1.15rem;
+            # cat=bootstrap 5.x: styling/bp5_006/005; type=string; label=$lead-font-size:
+            lead-font-size =
+            # cat=bootstrap 5.x: styling/bp5_006/005; type=string; label=$lead-font-weight:
+            lead-font-weight = 400
+            # cat=bootstrap 5.x: styling/bp5_007/001; type=string; label=$h1-font-size: Lege eine Schriftgröße für die Überschrift H1 fest.
+            h1-font-size = 3rem;
+            # cat=bootstrap 5.x: styling/bp5_007/001; type=string; label=$h2-font-size:
+            h2-font-size = 2.5rem;
+            # cat=bootstrap 5.x: styling/bp5_007/001; type=string; label=$h3-font-size:
+            h3-font-size = 1.8rem;
+            # cat=bootstrap 5.x: styling/bp5_007/001; type=string; label=$h4-font-size:
+            h4-font-size = 1.5rem;
+            # cat=bootstrap 5.x: styling/bp5_007/001; type=string; label=$h5-font-size:
+            h5-font-size = 1.15rem;
+
+            # cat=bootstrap 5.x: styling/bp5_010/001; type=options[Enabled=true, Disabled=false]; label=$enable-rounded:
+            enable-rounded = true
+            # cat=bootstrap 5.x: styling/bp5_010/002; type=options[Enabled=true, Disabled=false]; label=$enable-shadows:
+            enable-shadows = true
+            # cat=bootstrap 5.x: styling/bp5_010/003; type=options[Enabled=true, Disabled=false]; label=$enable-gradients:
+            enable-gradients = false
+            # cat=bootstrap 5.x: styling/bp5_010/004; type=options[Enabled=true, Disabled=false]; label=$enable-transitions:
+            enable-transitions = true
+
+            # cat=bootstrap 5.x: styling/bp5_010/005; type=string; label=$innenabstand XL:
+            frame-spacing-xl = 2.625rem;
+        }
+    }
+}
+
+@import './constants.autosets.typoscript'
+@import './constants.container.typoscript'

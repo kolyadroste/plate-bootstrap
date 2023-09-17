@@ -1,0 +1,25 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          110: EXT:bootstrap_package/Resources/Private/Forms/
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                translation:
+                  translationFiles:
+                    110: 'EXT:plate_bootstrap/Resources/Private/Language/locallang.xlf'
+                layoutRootPaths:
+                  30: 'EXT:plate_bootstrap/Resources/Private/Layouts/Form/'
+                templateRootPaths:
+                  30: 'EXT:plate_bootstrap/Resources/Private/Templates/Form/'
+                partialRootPaths:
+                  30: 'EXT:plate_bootstrap/Resources/Private/Partials/Form/'
+            ImageUpload:
+              properties:
+                imageLinkMaxWidth: 1200
+                imageMaxWidth: 200
+                imageMaxHeight: 200

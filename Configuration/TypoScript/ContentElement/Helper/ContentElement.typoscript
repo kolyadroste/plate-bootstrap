@@ -1,0 +1,176 @@
+##################################################
+### CONTENT ELEMENT SETTINGS                   ###
+### Shared settings for TYPO3 content elements ###
+##################################################
+lib.contentElement = FLUIDTEMPLATE
+lib.contentElement {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Default
+    templateRootPaths {
+        0 = EXT:bootstrap_package/Resources/Private/Templates/ContentElements/
+        10 = {$plugin.bootstrap_package_contentelements.view.templateRootPath}
+        20 = EXT:plate_bootstrap/Resources/Private/Templates/ContentElements/
+        30 = EXT:plate_bootstrap/Resources/Private/Templates/Felogin/
+    }
+    partialRootPaths {
+        0 = EXT:plate_partials/Resources/Private/Partials/
+        1 = EXT:bootstrap_package/Resources/Private/Partials/ContentElements/
+        5 = EXT:bootstrap_package/Resources/Private/Partials/Page/
+        6 = EXT:plate_bootstrap/Resources/Private/Partials/Page/
+        10 = {$plugin.bootstrap_package_contentelements.view.partialRootPath}
+        20 = EXT:plate_bootstrap/Resources/Private/Partials/ContentElements/
+        30 = EXT:plate_bootstrap/Resources/Private/Partials/Felogin/
+    }
+    layoutRootPaths {
+        0 = EXT:bootstrap_package/Resources/Private/Layouts/ContentElements/
+        10 = {$plugin.bootstrap_package_contentelements.view.layoutRootPath}
+        20 = EXT:plate_bootstrap/Resources/Private/Layouts/ContentElements/
+        30 = EXT:plate_bootstrap/Resources/Private/Layouts/Felogin/
+    }
+
+    dataProcessing{
+        1553883874 = BK2K\BootstrapPackage\DataProcessing\StaticFilesProcessor
+        1553883874 {
+            files {
+                normal = {$page.logo.file}
+                inverted = {$page.logo.fileInverted}
+            }
+            as = logo
+        }
+    }
+    #################
+    ### VARIABLES ###
+    #################
+    variables {
+        backendlayout = TEXT
+        backendlayout {
+            data = pagelayout
+            replacement.10 {
+                search = pagets__
+                replace =
+            }
+            ifEmpty = default
+        }
+        bsPublic = TEXT
+        bsPublic.value = EXT:bootstrap_package/Resources/Public
+        atomicBs = TEXT
+        atomicBs.value = EXT:plate_atomic_assets/Resources/Public/atomic-bootstrap/Dist
+
+        space_before_class = TEXT
+        space_before_class.data = field:space_before_class
+        space_before_class.ifEmpty =
+        space_after_class = TEXT
+        space_after_class.data = field:space_after_class
+        space_after_class.ifEmpty =
+    }
+
+    ################
+    ### SETTINGS ###
+    ################
+    settings {
+        logo {
+            height = {$page.logo.height}
+            width = {$page.logo.width}
+            linktitle = {$page.logo.linktitle}
+        }
+
+        gallery {
+            columns {
+                7 {
+                    class = gallery-item-size-7
+                    multiplier {
+                        default = 0.1666
+                        xlarge = 0.16666
+                        large = 0.16666
+                        medium = 0.3333
+                        small = 0.3333
+                        extrasmall = 0.5
+                    }
+                    gutters {
+                        default = 40
+                        xlarge = 40
+                        large = 40
+                        medium = 16
+                        small = 16
+                        extrasmall = 8
+                    }
+                }
+                8 {
+                    class = gallery-item-size-8
+                    multiplier {
+                        default = 0.1666
+                        xlarge = 0.16666
+                        large = 0.16666
+                        medium = 0.3333
+                        small = 0.3333
+                        extrasmall = 0.5
+                    }
+                    gutters {
+                        default = 40
+                        xlarge = 40
+                        large = 40
+                        medium = 16
+                        small = 16
+                        extrasmall = 8
+                    }
+                }
+            }
+        }
+        responsiveimages {
+            variants {
+                default {
+                    breakpoint = 1400
+                    width = 1920
+                }
+                xlarge {
+                    breakpoint = 1200
+                    width = 1100
+                }
+                large {
+                    breakpoint = 992
+                    width = 920
+                }
+                medium {
+                    breakpoint = 768
+                    width = 680
+                }
+                small {
+                    breakpoint = 576
+                    width = 500
+                }
+                extrasmall {
+                    breakpoint = unset
+                    width = 374
+                }
+            }
+        }
+    }
+}
+
+lib.containerContentElement {
+    templateRootPaths {
+        40 = EXT:plate_bootstrap/Resources/Private/Templates/Container/General
+    }
+    partialRootPaths {
+        40 = EXT:plate_bootstrap/Resources/Private/Partials/Container/General
+    }
+    dataProcessing {
+        1597060000 = B13\Container\DataProcessing\ContainerProcessor
+        1597060100 = Buepro\ContainerElements\DataProcessing\FlexFormProcessor
+        1597060100 {
+            fieldName = pi_flexform
+        }
+        1635924357 = Buepro\ContainerElements\DataProcessing\AspectProcessor
+    }
+    variables{
+        atomicAssets = TEXT
+        atomicAssets.value = EXT:plate_atomic_assets/Resources/Public
+        atomicBs = TEXT
+        atomicBs.value = EXT:plate_atomic_assets/Resources/Public/atomic-bootstrap/Dist
+        bsPublic = TEXT
+        bsPublic.value = EXT:bootstrap_package/Resources/Public
+    }
+}

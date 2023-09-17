@@ -1,0 +1,41 @@
+<fluid
+        data-namespace-typo3-fluid="true"
+        xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+        xmlns:pvhs="http://typo3.org/ns/Atomicplan/PlateVhs/ViewHelpers">
+
+
+    <f:comment>
+        <!-- deprecated -->
+
+        <f:if condition="{siteConfig} && {siteConfig.configuration.plateVarsPath}">
+            <f:then>
+                <pvhs:fileExist file="{siteConfig.configuration.plateVarsPath}">
+                    <f:then>
+                        <f:asset.css identifier="vars.default" href="{siteConfig.configuration.plateVarsPath}" priority="1" importance="100"/>
+                    </f:then>
+                    <f:else><f:debug>Der Pfad: "{siteConfig.configuration.plateVarsPath}" existiert nicht</f:debug></f:else>
+                </pvhs:fileExist>
+            </f:then>
+            <f:else>
+                <f:render section="LayoutVarsDefault" />
+            </f:else>
+        </f:if>
+
+
+        <f:section name="LayoutVarsDefault">
+            <f:variable name="defaultVarsFile" value="EXT:customer_theme/Resources/Public/Css/Vars/vars.theme.css"/>
+
+            <pvhs:ifExtInstalled extensionKey="customer_theme">
+                <pvhs:fileExist file="{defaultVarsFile}">
+                    <f:then>
+                        <f:asset.css identifier="vars.default" href="{defaultVarsFile}" priority="1" importance="100"/>
+                    </f:then>
+                    <f:else><f:debug>Der Pfad: "{defaultVarsFile}" existiert nicht</f:debug></f:else>
+                </pvhs:fileExist>
+            </pvhs:ifExtInstalled>
+        </f:section>
+    </f:comment>
+
+
+
+</fluid>

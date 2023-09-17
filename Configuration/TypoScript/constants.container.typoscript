@@ -1,0 +1,18 @@
+plugin.bootstrap_package {
+    settings {
+        scss {
+            # cat=bootstrap 5.x: container/bp5_001/001; type=string; label=$white:
+            max-width-xxl = 1400px
+            # cat=bootstrap 5.x: container/bp5_001/002; type=string; label=$white:
+            max-width-xl = 1100px
+            # cat=bootstrap 5.x: container/bp5_001/003; type=string; label=$white:
+            max-width-lg = 960px
+            # cat=bootstrap 5.x: container/bp5_001/004; type=string; label=$white:
+            max-width-md = 720px
+            # cat=bootstrap 5.x: container/bp5_001/005; type=string; label=$white:
+            max-width-sm = 540px
+        }
+    }
+}
+
+@import './constants.autosets.typoscript'

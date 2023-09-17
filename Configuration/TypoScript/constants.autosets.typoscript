@@ -1,0 +1,70 @@
+# CUSTOM SUBCATEGORIES
+# customsubcategory=bp5_hovers=Hovers
+
+plugin.bootstrap_package {
+    settings {
+        scss {
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/001; type=string; label=$primary-hover:
+            primary-hover = shift-color($primary, $link-shade-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/002; type=string; label=$primary-rgb-hover:
+            primary-rgb-hover = shift-color($primary-rgb, $link-shade-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/005; type=string; label=$secondary-hover:
+            secondary-hover = shift-color($secondary, $link-shade-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/006; type=string; label=$tertiary-hover:
+            tertiary-hover = shift-color($tertiary, $link-shade-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/007; type=string; label=$quaternary-hover:
+            quaternary-hover = shift-color($quaternary, $link-shade-percentage)
+
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/005; type=string; label=$default-hover:
+            default-hover = shift-color($default, $link-shade-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/006; type=string; label=$success-hover:
+            success-hover = shift-color($success, $link-shade-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/007; type=string; label=$info-hover:
+            info-hover = shift-color($info, $link-shade-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/008; type=string; label=$warning-hover:
+            warning-hover = shift-color($warning, $link-shade-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/009; type=string; label=$danger-hover:
+            danger-hover = shift-color($danger, $link-shade-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/010; type=string; label=$lighter-hover:
+            lighter-hover = shift-color($lighter, $link-shade-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/011; type=string; label=$light-hover:
+            light-hover = shift-color($light, $link-shade-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/012; type=string; label=$dark-hover:
+            dark-hover = shift-color($dark, $link-shade-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/013; type=string; label=$darker-hover:
+            darker-hover = shift-color($darker, $link-shade-percentage)
+
+            link-active-percentage = 15%
+
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/001; type=string; label=$primary-active:
+            primary-active = shift-color($primary, link-active-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/002; type=string; label=$primary-rgb-active:
+            primary-rgb-active = shift-color($primary-rgb, link-active-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/005; type=string; label=$secondary-active:
+            secondary-active = shift-color($secondary, link-active-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/006; type=string; label=$tertiary-active:
+            tertiary-active = shift-color($tertiary, link-active-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/007; type=string; label=$quaternary-active:
+            quaternary-active = shift-color($quaternary, link-active-percentage)
+
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/005; type=string; label=$default-active:
+            default-active = shift-color($default, link-active-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/006; type=string; label=$success-active:
+            success-active = shift-color($success, link-active-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/007; type=string; label=$info-active:
+            info-active = shift-color($info, link-active-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/008; type=string; label=$warning-active:
+            warning-active = shift-color($warning, link-active-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/009; type=string; label=$danger-active:
+            danger-active = shift-color($danger, link-active-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/010; type=string; label=$lighter-active:
+            lighter-active = shift-color($lighter, link-active-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/011; type=string; label=$light-active:
+            light-active = shift-color($light, link-active-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/012; type=string; label=$dark-active:
+            dark-active = shift-color($dark, link-active-percentage)
+            # cat=bootstrap 5.x Autosets: styling/bp5_hovers/013; type=string; label=$darker-active:
+            darker-active = shift-color($darker, link-active-percentage)
+        }
+    }
+}

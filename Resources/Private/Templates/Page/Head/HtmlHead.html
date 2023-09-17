@@ -1,0 +1,42 @@
+<fluid data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers">
+    <f:render partial="Page/DocHeader/OptionalHtmlHead" optional="false"/>
+    <f:render partial="Page/DocHeader/Favicons" optional="true"/>
+
+    <script type="application/javascript">
+        // add some utility classes to the html tag
+        (function () {
+            console.log('Welcome to atomic-bootstrap');
+            var w = window, t = document.documentElement, agent = [], d = document;
+            if (('ontouchstart' in w) || w.DocumentTouch && d instanceof DocumentTouch) {
+                agent.push('is-touch');
+            }else{
+                agent.push('mouse-or-keyboard');
+            }
+            const ua = navigator.userAgent;
+            if (/android/i.test(ua)) {
+                agent.push('andoid');
+            }
+            else if (/iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)){
+                agent.push('ios');
+            }
+            t.className = agent.join(' ');
+
+            const breakpoints = {0:"bp-xs",576:"bp-small",768:"bp-md",992:"bp-lg",1200:"bp-xl",1400:"abp-xxl",1600:"abp-xxxl"};
+            let html = document.querySelector('html');
+            const resizeObserver = new ResizeObserver(entries => {
+                for (let entry of entries) {
+                    Object.keys(breakpoints).forEach((breakpoint)=>{
+                        let bodyWith = entry.contentRect.width;
+                        if(bodyWith>=breakpoint){
+                           let bodyWith = entry.contentRect.width;
+                           html.removeAttribute("data-bp");
+                           html.setAttribute("data-bp",breakpoints[breakpoint]);
+                           return;
+                        }
+                    });
+                }
+            });
+            resizeObserver.observe(html);
+        })();
+    </script>
+</fluid>

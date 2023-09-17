@@ -1,0 +1,141 @@
+# Default PAGE object:
+@import './Config/lib.typoscript'
+@import './Config/frontend_editing.typoscript'
+@import './ContentElement/Textpic.typoscript'
+@import './ContentElement/Helper/ContentElement.typoscript'
+
+[applicationContext == "Development/Docker"]
+    config.contentObjectExceptionHandler = 0
+    config.admPanel = 1
+[end]
+
+// Disable the default BS-Package CSS and JS
+// We are utilizing Atomic Bootstrap in this project. For more information, visit: https://github.com/kjasker/atomic-bootstrap
+// The Atomic Bootstrap styles are loaded in the templates using Fluid. The CSS files can be found in the 'plate_atomic_assets' directory.
+// By adopting this approach, we can ensure that only necessary assets are loaded
+page {
+    headerData{
+        10 = FLUIDTEMPLATE
+        10{
+            file = EXT:plate_bootstrap/Resources/Private/Templates/Page/Head/HtmlHead.html
+            partialRootPaths {
+                10 = EXT:plate_bootstrap/Resources/Private/Partials/
+            }
+            templateRootPaths {
+                10 = EXT:plate_bootstrap/Resources/Private/Templates/
+            }
+        }
+    }
+    includeCSS{
+        // remove default BS-Package SCSS
+        theme =
+        vars = EXT:plate_bootstrap/Resources/Public/Scss/vars.scss
+        vars.forceOnTop = 1
+        vars.inline = 1
+        plate = EXT:plate_bootstrap/Resources/Public/Styles/plate.css
+    }
+    includeJSFooterlibs {
+        popper =
+        bootstrap =
+        photoswipe_core =
+        photoswipe_ui =
+        bootstrap_accordion =
+        bootstrap_popover =
+        bootstrap_stickyheader =
+        bootstrap_smoothscroll =
+        bootstrap_lightbox =
+        bootstrap_navbar =
+    }
+}
+includeJSFooterlibs {
+    #### Contrib
+    #photoswipe_core = EXT:bootstrap_package/Resources/Public/Contrib/photoswipe/photoswipe.min.js
+    #photoswipe_ui = EXT:bootstrap_package/Resources/Public/Contrib/photoswipe/photoswipe-ui-default.min.js
+
+    #### Custom Modules
+    #bootstrap_accordion = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.accordion.min.js
+    #bootstrap_popover = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.popover.min.js
+    #bootstrap_stickyheader = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.stickyheader.min.js
+    #bootstrap_smoothscroll = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.smoothscroll.min.js
+    #bootstrap_lightbox = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.lightbox.min.js
+    #bootstrap_navbar = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.navbar.min.js
+}
+
+page {
+    10 {
+        templateRootPaths {
+            0 = EXT:bootstrap_package/Resources/Private/Templates/Page/
+            1 = EXT:plate_bootstrap/Resources/Private/Templates/Page/
+            10 = {$page.fluidtemplate.templateRootPath}
+        }
+
+        partialRootPaths {
+            0 = EXT:plate_partials/Resources/Private/Partials/
+            1 = EXT:bootstrap_package/Resources/Private/Partials/Page/
+            10 = EXT:plate_bootstrap/Resources/Private/Partials/Page/
+            20 = {$page.fluidtemplate.partialRootPath}
+        }
+
+        layoutRootPaths {
+            0 = EXT:bootstrap_package/Resources/Private/Layouts/Page/
+            1 = EXT:plate_bootstrap/Resources/Private/Layouts/Page/
+            10 = {$page.fluidtemplate.layoutRootPath}
+        }
+
+        dataProcessing {
+#            1682782630 = TYPO3\CMS\Frontend\DataProcessing\CommaSeparatedValueProcessor
+#            1682782630{
+#                if.isTrue.field = slide_options
+#                fieldName = slide_options
+#                fieldDelimiter = ,
+#                fieldEnclosure = "
+#                as = slide_optionsc
+#            }
+        }
+        settings{
+            offCanvasLeft{
+                pageId = {$plugin.bootstrap_package.settings.offcanvasLeft.pageId}
+            }
+        }
+        variables{
+            atomicAssets = TEXT
+            atomicAssets.value = EXT:plate_atomic_assets/Resources/Public
+            atomicBs = TEXT
+            atomicBs.value = EXT:plate_atomic_assets/Resources/Public/atomic-bootstrap/Dist
+            bsPublic = TEXT
+            bsPublic.value = EXT:bootstrap_package/Resources/Public
+            plateBsPublic = TEXT
+            plateBsPublic.value = EXT:plate_bootstrap/Resources/Public
+
+            beLayout = TEXT
+            beLayout.field = backend_layout
+            beLayout.ifEmpty.data = levelfield:-2,backend_layout_next_level,slide
+            beLayout.ifEmpty.ifEmpty = default
+
+            slideHeader = TEXT
+            slideHeader.field = slide_header
+            slideHeader.ifEmpty.data = levelfield:-2,slide_header,slide
+            slidePostContent = TEXT
+            slidePostContent.field = slide_post_content
+            slidePostContent.ifEmpty.data = levelfield:-2,slide_post_content,slide
+            slidePreFooter = TEXT
+            slidePreFooter.field = slide_pre_footer
+            slidePreFooter.ifEmpty.data = levelfield:-2,slide_pre_footer,slide
+            slideFooter = TEXT
+            slideFooter.field = slide_footer
+            slideFooter.ifEmpty.data = levelfield:-2,slide_footer,slide
+            disableHeader = TEXT
+            disableHeader.field = disable_header
+            disablePostContent = TEXT
+            disablePostContent.field = disable_post_content
+            disablePostContentSubpages = TEXT
+            disablePostContentSubpages.field = levelfield:-2,disable_post_content_subpages,slide
+            disablePreFooter= TEXT
+            disablePreFooter.field = disable_pre_footer
+            disableFooter = TEXT
+            disableFooter.field = disable_footer
+        }
+    }
+}
+# EXTENSIONS
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:plate_bootstrap/Configuration/TypoScript/Extension/setup.typoscript">

@@ -1,0 +1,7 @@
+# EXTENSIONS
+# Manual inclusion to keep control over loading order
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:plate_bootstrap/Configuration/TypoScript/Extension/Container/setup.typoscript" condition="extension.isLoaded('container') == 1">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:plate_bootstrap/Configuration/TypoScript/Extension/Felogin/setup.typoscript" condition="extension.isLoaded('felogin') == 1">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:plate_bootstrap/Configuration/TypoScript/Extension/Form/setup.typoscript" condition="extension.isLoaded('form') == 1">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:plate_bootstrap/Configuration/TypoScript/Extension/IndexedSearch/setup.typoscript" condition="extension.isLoaded('indexed_search') == 1">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:plate_bootstrap/Configuration/TypoScript/Extension/Seo/setup.typoscript" condition="extension.isLoaded('seo') == 1">

@@ -1,0 +1,16 @@
+
+config.tx_frontendediting{
+    contentPersistPreProcessing {
+        tt_content {
+            header {
+                header {
+                    stripHtml = 1
+                }
+            }
+        }
+    }
+}
+
+#[backend.user.isLoggedIn && userFunc = Atomicplan\Utility\CheckExtension->isExtensionInstalled('frontend_editing')]
+#    page.includeCSS.frontendEditingChanges = EXT:plate/Resources/Public/Styles/frontend-editing-changes.css
+#[end]

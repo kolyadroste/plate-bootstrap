@@ -1,0 +1,17 @@
+imports:
+    - { resource: "EXT:bootstrap_package/Configuration/RTE/Default.yaml" }
+    - { resource: "EXT:bw_icons/Configuration/RTE/IconPicker.yaml" }
+
+editor:
+    config:
+        toolbarGroups:
+            - { name: styles, groups: [ format, styles ] }
+            - { name: basicstyles, groups: [ basicstyles ] }
+            - { name: paragraph, groups: [ list, indent, blocks, align ] }
+            - "/"
+            - { name: links, groups: [ links ] }
+            - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
+            - { name: editing, groups: [ spellchecker ] }
+            - { name: insert, groups: [ insert ] }
+            - { name: tools, groups: [ table, specialchar ] }
+            - { name: document, groups: [ mode ] }

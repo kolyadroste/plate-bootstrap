@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    {f:variable(name: '_activeItemIndex', value: 1)}
+    {f:variable(name: '_activeItemIndex', value: data.pi_flexform.activeItemIndex) -> f:if(condition: '{data.pi_flexform.activeItemIndex} > -1')}
+    {f:if(condition: data.pi_flexform.headerLayout, then: data.pi_flexform.headerLayout, else: '4') -> f:variable(name: '_headingLayout')}
+    <div class="accordion {f:if(condition:'{data.pi_flexform.style}', then:'{data.pi_flexform.style}')}"
+         id="accordion-{data.uid}">
+        <f:asset.css identifier="bs.accordion" href="{atomicBs}/components/accordion.css" priority="1"/>
+        <f:asset.css identifier="bs.transitions" href="{atomicBs}/components/transitions.css" priority="1"/>
+        <f:asset.script identifier="bs.accordion" src="{atomicAssets}/atomic-bootstrap/Js/bootstrap.accordion.min.js" priority="1"/>
+        <f:for each="{children_101}" as="record" iteration="iterator">
+            <div class="accordion-item">
+                <h{_headingLayout} class="accordion-header" id="accordion-heading-{record.uid}">
+                    {f:variable(name: '_expanded', value: 'false')}
+                    {f:variable(name: '_expanded', value: 'true') -> f:if(condition:'{iterator.cycle} == {_activeItemIndex}')}
+                    <button class="accordion-button{f:if(condition:'{iterator.cycle} != {_activeItemIndex}', then:' collapsed')}" type="button"
+                            data-toggle="collapse"
+                            data-target="#accordion-{record.uid}"
+                            data-parent="#accordion-{data.uid}"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordion-{record.uid}"
+                            data-bs-parent="#accordion-{data.uid}"
+                            aria-expanded="{_expanded}"
+                            aria-controls="accordion-{record.uid}"
+                    >
+                        {record.header}
+                    </button>
+                </h{_headingLayout}>
+                <div id="accordion-{record.uid}"
+                     class="accordion-collapse collapse{f:if(condition:'{iterator.cycle} == {_activeItemIndex}', then:' show')}"
+                     aria-labelledby="accordion-heading-{record.uid}"
+                     data-parent="#accordion-{data.uid}"
+                     data-bs-parent="#accordion-{data.uid}">
+                    <div class="ce-accordion-body accordion-body">
+                        {f:cObject(typoscriptObjectPath: 'lib.containerElements.renderContent', data: record)}
+                    </div>
+                </div>
+            </div>
+        </f:for>
+    </div>
+</f:section>
+</html>

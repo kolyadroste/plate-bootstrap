@@ -1,0 +1,15 @@
+TCEFORM.tt_content.imageorient.removeItems = 1,2,9,10
+
+TCEFORM.tt_content.imagecols.removeItems = 9,10,11,12,13
+TCEFORM.tt_content.imagecols.addItems{
+    7 = 7
+    8 = 8
+}
+// re-enable image width
+TCEFORM.tt_content{
+    imagewidth.disabled = 0
+    #imageborder.disabled = 0
+}
+// explicitly disabling for specific types
+TCEFORM.tt_content.imagewidth.types.textpic.disabled = 1
+TCEFORM.tt_content.imagewidth.types.textmedia.disabled = 1

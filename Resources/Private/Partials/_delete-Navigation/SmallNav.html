@@ -1,0 +1,30 @@
+<fluid
+        data-namespace-typo3-fluid="true"
+        xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+>
+    <f:if condition='{flexform.settings.telephone} != "" || {flexform.settings.email} != ""'>
+        <address class="a-display::flex a-padding::small::childs vars-shy">
+            <atomic-button transparent>{flexform.settings.telephone}</atomic-button>
+            <atomic-button transparent>{flexform.settings.email}</atomic-button>
+        </address>
+    </f:if>
+
+    <f:if condition="{topnav}">
+        <nav class="ac-nav a-display::inline-flex ::flex-items-center vars-shy a-margin::bottom-medium">
+            <f:for each="{topnav}" as="entry">
+                <li class="a-line-height::default a-display::inline-block">
+                    <atomic-button transparent>
+                        <f:if condition="{entry.tx_bwicons_icon}">
+                            <div slot="before" style="margin-right:5px">
+                                <f:variable name="icon" value="{f:uri.resource(path:entry.tx_bwicons_icon)}"/>
+                                <div class="mask-svg" style="-webkit-mask: url({icon}) no-repeat center / contain;"></div>
+                            </div>
+
+                        </f:if>
+                        <f:link.typolink parameter="{entry.uid}" title="{entry.title}" class="a-line-height::1">{entry.title}</f:link.typolink>
+                    </atomic-button>
+                </li>
+            </f:for>
+        </nav>
+    </f:if>
+</fluid>

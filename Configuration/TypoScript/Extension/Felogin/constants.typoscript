@@ -1,0 +1,13 @@
+# FRONTEND LOGIN
+plugin {
+    tx_felogin_login {
+        view {
+            # cat=Frontend Login/02_Template/102; type=string; label= Path to template root (FE)
+            templateRootPath = EXT:plate_bootstrap/Resources/Private/Templates/Felogin/
+            # cat=Frontend Login/02_Template/103; type=string; label= Path to template partials (FE)
+            partialRootPath =
+            # cat=Frontend Login/02_Template/104; type=string; label= Path to template layouts (FE)
+            layoutRootPath =
+        }
+    }
+}

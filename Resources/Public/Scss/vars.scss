@@ -1,0 +1,295 @@
+$escaped-characters: (
+                ("<", "%3c"),
+                (">", "%3e"),
+                ("#", "%23"),
+                ("(", "%28"),
+                (")", "%29"),
+) !default;
+@import 'functions.scss';
+
+// prevent custom-elements to cause layoutshifts
+atomic-dropdown:not(:defined),
+atomic-offcanvas:not(:defined),
+atomic-click:not(:defined),
+atomic-overlay:not(:defined),
+atomic-button:not(:defined){
+    display: none;
+}
+
+//
+// Color system
+// --------------------------------------------------
+$white:                             #ffffff !default;
+$gray-100:                          #f8f8f8 !default;
+$gray-200:                          #e9e9e9 !default;
+$gray-300:                          #dedede !default;
+$gray-400:                          #cecece !default;
+$gray-500:                          #ababab !default;
+$gray-600:                          #6c6c6c !default;
+$gray-700:                          #494949 !default;
+$gray-800:                          #313131 !default;
+$gray-900:                          #212121 !default;
+$black:                             #000000 !default;
+
+$primary:                           #2a9d8f !default;
+$secondary:                         #e76f51 !default;
+$tertiary:                          #f4a261 !default;
+$quaternary:                        #e9c46a !default;
+
+$default:                           #eaebec !default;
+$success:                           #5cb85c !default;
+$info:                              #319fc0 !default;
+$warning:                           #f0ad4e !default;
+$danger:                            #d9534f !default;
+$lighter:                           $gray-100 !default;
+$light:                             $gray-200 !default;
+$dark:                              $gray-800 !default;
+$darker:                            $gray-900 !default;
+
+$primary-hover:                           #2a9d8f !default;
+$secondary-hover:                         #e76f51 !default;
+$tertiary-hover:                          #f4a261 !default;
+$quaternary-hover:                        #e9c46a !default;
+
+$hover-shade-amount:       15% !default;
+$active-shade-amount:      20% !default;
+
+$primary-hover:                           shift-color($primary, $hover-shade-amount) !default;
+$secondary-hover:                         shift-color($secondary, $hover-shade-amount) !default;
+$tertiary-hover:                          shift-color($tertiary, $hover-shade-amount) !default;
+$quaternary-hover:                        shift-color($quarternary, $hover-shade-amount) !default;
+
+$default-hover:                     shade-color($default, $hover-shade-amount) !default;
+$success-hover:                     shade-color($success, $hover-shade-amount) !default;
+$info-hover:                        shade-color($info, $hover-shade-amount) !default;
+$warning-hover:                     shade-color($warning, $hover-shade-amount) !default;
+$danger-hover:                      shade-color($danger, $hover-shade-amount) !default;
+$lighter-hover:                     shade-color($lighter, $hover-shade-amount) !default;
+$light-hover:                       shade-color($light, $hover-shade-amount) !default;
+$dark-hover:                        shade-color($dark, $hover-shade-amount) !default;
+$darker-hover:                      shade-color($darker, $hover-shade-amount) !default;
+
+$link-color:                        $primary !default;
+
+$body-font-weight:                  300 !default;
+$lead-font-weight:                  400 !default;
+
+
+//
+// Root Css Vars
+// --------------------------------------------------
+:root{
+    --frame-spacing-small-lg: 1.05rem;
+    --frame-spacing-xl: #{$frame-spacing-xl};
+    --frame-spacing-small-xl: 1.125rem;
+    --frame-outer-spacing-before: 0;
+    --frame-outer-spacing-after: 0;
+    --frame-outer-spacing-variant-none: 0rem;
+    --frame-outer-spacing-variant-extra-small: 1rem;
+    --frame-outer-spacing-variant-small: 1.5rem;
+    --frame-outer-spacing-variant-medium: 2rem;
+    --frame-outer-spacing-variant-large: 2.5rem;
+    --frame-outer-spacing-variant-extra-large: 4.5rem;
+    --frame-outer-spacing-variant-xxl: 7rem;
+    --frame-outer-spacing-variant-xxxl: 9rem;
+    --frame-color: inherit;
+    --frame-link-color: #{$link-color};
+    --frame-link-hover-color: #{$link-hover-color};
+    --frame-background: transparent;
+    --frame-embedded-border-radius: 0.5rem;
+    --frame-width-large: 1600px;
+    --frame-width-medium: 870px;
+    --frame-width-small: 600px;
+    --frame-spacing: 1.75rem;
+    --frame-spacing-small: 0.75rem;
+    --frame-spacing-xs: 1.75rem;
+    --frame-spacing-small-xs: 0.75rem;
+    --frame-spacing-sm: 2.1rem;
+    --frame-spacing-small-sm: 0.9rem;
+    --frame-spacing-md: 2.275rem;
+    --frame-spacing-small-md: 0.975rem;
+    --frame-spacing-lg: 2.45rem;
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #{black};
+    --bs-white: #{$white};
+    --bs-gray: #{$gray-500};
+    --bs-gray-dark: #313131;
+    --bs-gray-100: #{$gray-100};
+    --bs-gray-200: #{$gray-200};
+    --bs-gray-300: #{$gray-300};
+    --bs-gray-400: #{$gray-400};
+    --bs-gray-500: #{$gray-500};
+    --bs-gray-600: #{$gray-600};
+    --bs-gray-700: #{$gray-700};
+    --bs-gray-800: #{$gray-800};
+    --bs-gray-900: #{$gray-900};
+    --bs-primary: #{$primary};
+    --bs-secondary: #{$secondary};
+    --bs-tertiary: #{$tertiary};
+    --bs-quaternary: #{$quaternary};
+    --bs-success: #{$success};
+    --bs-info: #{$info};
+    --bs-warning: #{$warning};
+    --bs-danger: #{$danger};
+    --bs-default: #{$default};
+    --bs-lighter: #{$lighter};
+    --bs-light: #{$light};
+    --bs-dark: #{$dark};
+    --bs-darker: #{$darker};
+
+    --bs-primary-hover: #{$primary-hover};
+    --bs-secondary-hover: #{$secondary-hover};
+    --bs-tertiary-hover: #{$tertiary-hover};
+    --bs-quaternary-hover: #{$quaternary-hover};
+    --bs-success-hover: #{$success-hover};
+    --bs-info-hover: #{$info-hover};
+    --bs-warning-hover: #{$warning-hover};
+    --bs-danger-hover: #{$danger-hover};
+    --bs-default-hover: #{$default-hover};
+    --bs-lighter-hover: #{$lighter-hover};
+    --bs-light-hover: #{$light-hover};
+    --bs-dark-hover: #{$dark-hover};
+    --bs-darker-hover: #{$darker-hover};
+
+    --bs-primary-rgb: #{$primary-rgb};
+    --bs-secondary-rgb: #{$secondary-rgb};
+    --bs-tertiary-rgb: 233, 196, 106;
+    --bs-quaternary-rgb: 233, 196, 106;
+    --bs-success-rgb: 92, 184, 92;
+    --bs-info-rgb: 49, 159, 192;
+    --bs-warning-rgb: 240, 173, 78;
+    --bs-danger-rgb: 217, 83, 79;
+    --bs-default-rgb: 234, 235, 236;
+    --bs-lighter-rgb: 248, 248, 248;
+    --bs-light-rgb: 233, 233, 233;
+    --bs-dark-rgb: 49, 49, 49;
+    --bs-darker-rgb: 33, 33, 33;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-black-rgb: 0, 0, 0;
+    --bs-body-color-rgb: 33, 33, 33;
+    --bs-body-bg-rgb: 255, 255, 255;
+    --bs-font-sans-serif: #{$font-family-sans-serif};
+    --bs-font-family: #{$font-family-sans-serif};
+    --bs-font-monospace: #{$font-family-monospace};
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: #{$base-font-size};
+    --bs-body-font-weight: #{$body-font-weight};
+    --bs-body-line-height: 1.5;
+    --bs-body-color: #{$body-color};
+    --bs-body-bg: #{$body-bg};
+    --bs-border-width: 1px;
+    --bs-border-style: solid;
+    --bs-border-color: #dedede;
+    --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+    --bs-border-radius: 0.375rem;
+    --bs-border-radius-sm: 0.25rem;
+    --bs-border-radius-lg: 0.5rem;
+    --bs-border-radius-xl: 1rem;
+    --bs-border-radius-2xl: 2rem;
+    --bs-border-radius-pill: 50rem;
+    --bs-link-color: #{$link-color};
+    --bs-icon-color: #{$link-color};
+    --bs-link-hover-color: #{$link-hover-color};
+    --bs-code-color: #d63384;
+    --bs-highlight-bg: #fff3cd;
+    --bs-link-decoration: none;
+    --bs-link-hover-decoration: none;
+    --bs-heading-color: var(--bs-primary, #333);
+    /* lead */
+    @if($lead-font-size != ''){
+        --bs-lead-font-size: #{$lead-font-size};
+    }
+    .lead {
+        font-size: var(--bs-lead-font-size, calc(#{$base-font-size} * 1.25));
+    }
+    --bs-lead-font-weight: #{$lead-font-weight};
+
+
+    // ffc
+    --gallery-gap: 3rem;
+
+    /* Extra CSS Variables */
+    --bs-gap-xsmall: 0.25rem;
+    --bs-gap-small: 0.5rem;
+    --bs-gap-medium: 1.5rem;
+    --bs-gap-big: 2rem;
+    --bs-gap-large: 3rem;
+    --bs-gap-xlarge: 4rem;
+    --bs-gap-xxlarge: 6rem;
+
+    /* defaults webcomponents */
+    --atomic-slider-background-color: var(--bs-primary);
+    --atomic-cookie-consent--button-color: var(--bs-primary);
+    --atomic-cookie-consent-button-background-color: var(--bs-primary);
+    --atomic-cookie-consent-button-all-background-color: var(--bs-primary);
+    --atomic-cookie-consent-button-all--border: 2px solid var(--bs-primary);
+
+    // frames
+    --frame-width-xxl: #{$max-width-xxl};
+    --frame-width-xl: #{$max-width-xl};
+    --frame-width-lg: #{$max-width-lg};
+    --frame-width-md: #{$max-width-md};
+    --frame-width-sm: #{$max-width-sm};
+
+    /* Headers */
+    --bs-h1-font-size: calc(#{$h1-font-size} - 0.8rem + 0.6vw);
+    --bs-h2-font-size: calc(#{$h2-font-size} - 0.8rem + 0.6vw);
+    --bs-h3-font-size: calc(#{$h3-font-size} - 0.8rem + 0.6vw);
+    --bs-h4-font-size: calc(#{$h4-font-size} - 0.8rem + 0.6vw);
+    --bs-h5-font-size: calc(#{$h5-font-size} - 0.8rem + 0.6vw);
+}
+@media screen and (min-width: 1200px){
+    :root{
+        --bs-h1-font-size: #{$h1-font-size};
+        --bs-h2-font-size: #{$h2-font-size};
+        --bs-h3-font-size: #{$h3-font-size};
+        --bs-h4-font-size: #{$h4-font-size};
+        --bs-h5-font-size: #{$h5-font-size};
+    }
+}
+
+/* defaults webcomponents */
+atomic-offcanvas atomic-dropdown{
+    --atomic-dropdown-content-background: #eee;
+}
+
+.frame-background-tertiary,
+.bg-tertiary{
+    background: var(--bs-tertiary, #{$tertiary}) !important;
+}
+
+// correct bspackage default frames
+.frame .frame{
+    --frame-spacing: 0;
+}
+.frame .frame:last-child{
+    margin-bottom:0;
+}
+
+/* set fonts white on colorized bgs */
+.-colorized:not(.bg-color--bs-light){
+    --frame-color: #ffffff;
+    --frame-link-color: #eee ;
+    --bs-link-color: #eee;
+    --bs-link-hover-color: #ccc;
+    --frame-link-hover-color: #ccc;
+    --bs-heading-color: #ffffff;
+    --card-color: white;
+    --bs-heading-color: white;
+}
+
+@import 'link.scss';
+
+hr{
+    margin: var(--bs-gap-large) 0;
+}

@@ -1,0 +1,10 @@
+@import 'EXT:plate_bootstrap/Configuration/TsConfig/Mod/WebLayout/BackendLayouts.tsconfig'
+
+// disable bootrstap_package icons, nav_icon, nav_icon_identifier and nav_icon_set
+TCEFORM.pages.nav_icon.disabled = 1
+TCEFORM.pages.nav_icon_identifier.disabled = 1
+TCEFORM.pages.nav_icon_set.disabled = 1
+
+## Page TSconfig
+## In diesem Beispiel hat die Wurzel-Kategorie die ID 3
+TCEFORM.pages.categories.config.treeConfig.rootUid = 3

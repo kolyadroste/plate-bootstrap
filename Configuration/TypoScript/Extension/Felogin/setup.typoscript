@@ -1,0 +1,8 @@
+# FRONTEND LOGIN
+plugin.tx_felogin_login {
+    view {
+        templateRootPaths.20 = EXT:plate_bootstrap/Resources/Private/Templates/Felogin/
+        partialRootPaths.20 = EXT:plate_bootstrap/Resources/Private/Partials/Felogin/
+        layoutRootPaths.20 = EXT:plate_bootstrap/Resources/Private/Layouts/Felogin/
+    }
+}

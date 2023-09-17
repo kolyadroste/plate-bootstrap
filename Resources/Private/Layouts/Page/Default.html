@@ -1,0 +1,47 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+<div id="top"></div>
+    <f:asset.script identifier="atomic-stickystate" src="EXT:plate_atomic_assets/Resources/Public/Webcomponents/Dist/atomic-stickystate.min.js"/>
+    <f:asset.script identifier="atomic-offcanvas" src="{atomicAssets}/Webcomponents/Dist/atomic-offcanvas.min.js"/>
+    <f:asset.script identifier="atomic-scrolltotop" src="{atomicAssets}/Webcomponents/Dist/atomic-scrolltotop.min.js"/>
+
+    <atomic-stickystate scrollThreshold="0">
+        <atomic-offcanvas id="offcanvas1" pos="right">
+            <div slot="offcanvas-content">
+                <f:render section="Offcanvas" optional="true" />
+            </div>
+        </atomic-offcanvas>
+        <div class="body-bg{f:if(condition:theme.navigation.type, then:' body-bg-{theme.navigation.type}')}">
+            <f:asset.css identifier="bs.base" href="{atomicBs}/base.css" priority="1"/>
+            <f:asset.css identifier="bs.frame" href="{atomicBs}/components/frame.css" priority="1"/>
+            <f:asset.css identifier="bs.visually-hidden" href="{atomicBs}/helpers/visually-hidden.css" priority="1"/>
+            <f:asset.css identifier="bs.utilities.base" href="{atomicAssets}/atomic-bootstrap/Dist/utilities/utilities.base.css"/>
+            <f:render partial="DropIn/Page/PageBefore" arguments="{_all}" />
+            <f:render partial="Structure/CookieConsent" arguments="{_all}" />
+
+            <a class="visually-hidden-focusable" href="#page-content">
+                <span>{f:translate(key: 'skiptomaincontent', extensionName: 'bootstrap_package')}</span>
+            </a>
+
+            <f:render partial="DropIn/Structure/BorderBefore" arguments="{_all}" optional="true"/>
+            <header id="page-header" class="header-section">
+                <f:render section="Border" optional="true" />
+                <f:render section="SlidePostContent" optional="true"  />
+            </header>
+
+            <div id="page-content" class="bp-page-content main-section">
+                <f:render section="Main" />
+            </div>
+
+            <footer id="page-footer" class="bp-page-footer position-relative" >
+                <f:render partial="DropIn/Structure/FooterBefore" arguments="{_all}" />
+                <f:render section="Footer" optional="true" />
+                <f:render partial="DropIn/Structure/FooterAfter" arguments="{_all}" />
+            </footer>
+            <f:render partial="DropIn/Page/PageAfter" arguments="{_all}" />
+        </div>
+    </atomic-stickystate>
+    <atomic-scrolltotop></atomic-scrolltotop>
+
+</f:spaceless>
+</html>

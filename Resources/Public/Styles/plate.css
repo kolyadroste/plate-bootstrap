@@ -1,0 +1,71 @@
+
+/* enable automatic wordbreak (note: correct lang has to be set in html-tag) */
+*{
+    hyphens: auto;
+}
+
+/* richtext icons */
+p > img[data-icon-base-name]{
+    width: var(--plate-richtext-icon-size, 1.5em);
+    height: var(--plate-richtext-icon-size, 1.5em);
+    vertical-align: -0.33em;
+}
+/* remove manual linebreaks in Headers*/
+@media screen and (max-width:997px) {
+    .frame-header * br {
+        display: none !important;
+    }
+}
+/* frame additions */
+
+@media screen and (min-width:997px) {
+    .frame-layout-content-shift-top-33,
+    .frame-layout-content-shift-top-50,
+    .frame-layout-content-shift-top-75,
+    .frame-layout-content-shift-top-100,
+    .frame-layout-content-shift-top-125{
+        padding-top: 0;
+        padding-bottom:0;
+    }
+
+    .frame-layout-content-shift-top-125 .frame-inner{
+        transform: translateY(-125%);
+    }
+    .frame-layout-content-shift-top-100 .frame-inner{
+        transform: translateY(-100%);
+    }
+    .frame-layout-content-shift-top-75 .frame-inner{
+        transform: translateY(-75%);
+    }
+    .frame-layout-content-shift-top-50 .frame-inner{
+        transform: translateY(-50%);
+    }
+    .frame-layout-content-shift-top-33 .frame-inner{
+        transform: translateY(-33%);
+    }
+}
+.frame.-full .frame-container{
+    max-width: none;
+    padding-right: 0;
+    padding-left: 0;
+}
+@media screen and (min-width: 1200px) {
+    .frame.-wider .frame-container{
+        max-width: 1400px;
+    }
+    .frame.-slim .frame-container{
+        max-width: 1100px;
+    }
+}
+@media screen and (min-width: 992px) {
+    .frame.-moreslim .frame-container{
+        max-width: 800px;
+    }
+    .frame.-veryslim .frame-container{
+        max-width: 600px;
+    }
+}
+/* webcomponent  defaults*/
+:root{
+    --stahl-offcanvas-padding: 0;
+}

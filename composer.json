@@ -1,0 +1,30 @@
+{
+	"name": "atomicplan/plate-bootstrap",
+	"version": "0.5.0",
+	"type": "typo3-cms-extension",
+	"description": "Plate - Is a basis Template that provides some js loading mechanisms and basic templating",
+	"license": "GPL-2.0-or-later",
+	"keywords": ["TYPO3 CMS", "Integrators", "Site Extension", "Site Package", "TypoScript"],
+	"require": {
+		"php": "^7.4 || ^8.0",
+		"typo3/cms-core": "^11.0 || ^12.0",
+		"bk2k/bootstrap-package": "^13.0",
+		"atomicplan/plate-atomic-assets": "^0.5",
+		"atomicplan/plate-vhs": "^0.5"
+	},
+	"extra": {
+		"typo3/cms": {
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"extension-key": "plate_bootstrap"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Atomicplan\\PlateBootstrap\\": "Classes/"
+		}
+	},
+	"require-dev": {},
+	"config": {
+		"sort-packages": true
+	}
+}

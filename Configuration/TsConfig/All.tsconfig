@@ -1,0 +1,2 @@
+@import './page.tsconfig'
+@import './tt_content.tsconfig'

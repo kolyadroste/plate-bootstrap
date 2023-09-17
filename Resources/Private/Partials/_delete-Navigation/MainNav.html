@@ -1,0 +1,98 @@
+<fluid
+        data-namespace-typo3-fluid="true"
+        xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+>
+    <f:asset.script identifier="atomic-dropdown" type="module" src="{atomicAssets}/Webcomponents/Dist/atomic-dropdown.min.js" priority="1"/>
+
+    <nav class="a-flex ac-nav --primary vars-inverted ah-hide::medium-down">
+        <f:for each="{mainnav}" as="entry" iteration="i">
+            <f:variable name="title" value="{entry.title}"/>
+            <f:if condition="{entry.nav_title}">
+                <f:variable name="title" value="{entry.nav_title}"/>
+            </f:if>
+
+            <f:if condition="{i.isLast}">
+                <f:variable name="a-dropdown--open-state" value="open-left"/>
+            </f:if>
+
+            <li class="treeitem">
+                <f:if condition="{entry.subpages}">
+                    <f:then>
+                        <atomic-dropdown class=" a-text-align-left" closeOnLeave {atomic-dropdown--open-state} group="mainNav">
+                            <atomic-button transparent slot="click-element" class="vars-default">
+                                <span>{title}</span>
+                            </atomic-button>
+                            <f:if condition="{entry.subpages->f:count()} <= 6">
+                                <f:then>
+                                    <ul class="ac-nav is-dropdown-submenu a-white-space::nowrap ::flex-direction-column a-display::block::childs vars-reset vars-default">
+                                        <atomic-button transparent>
+                                            <f:link.typolink parameter="{entry.uid}" title="{item.title}">Übersicht</f:link.typolink>
+                                        </atomic-button>
+                                        <hr>
+                                        <f:for each="{entry.subpages}" as="item">
+                                            <atomic-button transparent>
+                                                <f:variable name="title" value="{item.title}"/>
+                                                <f:if condition="{item.nav_title}">
+                                                    <f:variable name="title" value="{item.nav_title}"/>
+                                                </f:if>
+                                                <f:link.typolink parameter="{item.uid}" title="{title}" class="a-line-height::small">{title}</f:link.typolink>
+                                            </atomic-button>
+                                        </f:for>
+                                    </ul>
+                                </f:then>
+                                <f:else>
+                                    <atomic-button transparent>
+                                        <f:link.typolink parameter="{entry.uid}" title="{item.title}">Übersicht</f:link.typolink>
+                                    </atomic-button>
+                                    <hr>
+                                    <div class="ac-grid --grid-gap--small ::cols-50 " style="width:400px">
+                                        <div class="grid-entry">
+                                            <ul class="ac-navigation is-dropdown-submenu ::flex-direction-column a-display::block::childs">
+                                                <f:variable name="numSubpages" value="{entry.subpages->f:count()}"/>
+                                                <f:variable name="numSubpagesPerColumn" value="{numSubpages / 2}"/>
+                                                <f:for each="{entry.subpages}" as="item" iteration="num">
+                                                    <f:if condition="{num.cycle} <= {numSubpagesPerColumn}">
+                                                        <atomic-button transparent>
+                                                            <f:variable name="title" value="{item.title}"/>
+                                                            <f:if condition="{item.nav_title}">
+                                                                <f:variable name="title" value="{item.nav_title}"/>
+                                                            </f:if>
+                                                            <f:link.typolink parameter="{item.uid}" title="{title}" class="a-line-height::small">{title}</f:link.typolink>
+                                                        </atomic-button>
+                                                    </f:if>
+                                                </f:for>
+                                            </ul>
+                                        </div>
+                                        <div class="grid-entry">
+                                            <ul class="ac-nav is-dropdown-submenu ::flex-direction-column a-display::block::childs>
+                                                <f:variable name="numSubpages" value="{entry.subpages->f:count()}"/>
+                                                <f:variable name="numSubpagesPerColumn" value="{numSubpages / 2}"/>
+                                                <f:for each="{entry.subpages}" as="item" iteration="num">
+                                                    <f:if condition="{num.cycle} > {numSubpagesPerColumn}">
+                                                        <atomic-button transparent>
+                                                            <f:variable name="title" value="{item.title}"/>
+                                                            <f:if condition="{item.nav_title}">
+                                                                <f:variable name="title" value="{item.nav_title}"/>
+                                                            </f:if>
+                                                            <f:link.typolink parameter="{item.uid}" title="{title}" class="a-line-height::small">{title}</f:link.typolink>
+                                                        </atomic-button>
+                                                    </f:if>
+                                                </f:for>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </f:else>
+                            </f:if>
+                        </atomic-dropdown>
+                    </f:then>
+                    <f:else>
+                        <atomic-button transparent>
+                            <f:link.typolink parameter="{entry.uid}" title="{entry.title}">{title}</f:link.typolink>
+                        </atomic-button>
+                    </f:else>
+
+                </f:if>
+            </li>
+        </f:for>
+    </nav>
+</fluid>

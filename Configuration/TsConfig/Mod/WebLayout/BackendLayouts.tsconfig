@@ -1,0 +1,5 @@
+########################
+#### BACKENDLAYOUTS ####
+########################
+mod.web_layout.BackendLayouts >
+@import 'EXT:plate_bootstrap/Configuration/TsConfig/Mod/WebLayout/BackendLayouts/*.tsconfig'

@@ -1,0 +1,10 @@
+# CTYPE: TEXTPIC add img in Text
+tt_content.textpic {
+    templateName.stdWrap.cObject {
+        key.field = imageorient
+        17 = TEXT
+        17.value = TextpicRightInner
+        18 = TEXT
+        18.value = TextpicLeftInner
+    }
+}
