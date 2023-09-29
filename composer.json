@@ -1,6 +1,5 @@
 {
 	"name": "atomicplan/plate-bootstrap",
-	"version": "0.5.0",
 	"type": "typo3-cms-extension",
 	"description": "Plate - Is a basis Template that provides some js loading mechanisms and basic templating",
 	"license": "GPL-2.0-or-later",
