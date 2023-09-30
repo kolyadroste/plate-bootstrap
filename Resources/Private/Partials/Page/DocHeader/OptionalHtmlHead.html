@@ -4,10 +4,9 @@
         xmlns:plate="http://typo3.org/ns/AtomicPlan/Plate/FrontendEditing/ViewHelpers"
         xmlns:core="http://typo3.org/ns/TYPO3/CMS/FrontendEditing/ViewHelpers"
 >
-
-    <!-- additional Fonts can be placed here -->
-    <f:variable name="fontPath" value="typo3conf/ext/customer_theme/Resources/Public/Fonts/raleway"/>
+    <!-- additional Fonts can be placed like this (typo3 12 needs processed paths, relative paths wont work)-->
     <f:comment>
+        <f:variable name="fontPath" value="typo3conf/ext/customer_theme/Resources/Public/Fonts/raleway"/>
         <style>
             /* raleway-300 - latin */
             @font-face {
@@ -15,7 +14,7 @@
                 font-family: 'Raleway';
                 font-style: normal;
                 font-weight: 300;
-                src: url('/{fontPath}/raleway-v28-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+                src: url('{f:uri.resource(path:'{fontPath}/raleway-v28-latin-300.woff2')}') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
             }
             /* raleway-600 - latin */
             @font-face {
@@ -23,7 +22,7 @@
                 font-family: 'Raleway';
                 font-style: normal;
                 font-weight: 600;
-                src: url('/{fontPath}/raleway-v28-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+                src: url('{f:uri.resource(path:'{fontPath}/raleway-v28-latin-600.woff2')}') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
             }
             /* raleway-700 - latin */
             @font-face {
@@ -31,18 +30,8 @@
                 font-family: 'Raleway';
                 font-style: normal;
                 font-weight: 700;
-                src: url('/{fontPath}/raleway-v28-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+                src: url('/{f:uri.resource(path:'{fontPath}/raleway-v28-latin-700.woff2')}') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
             }
-            /* raleway-800 - latin */
-            @font-face {
-                font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-                font-family: 'Raleway';
-                font-style: normal;
-                font-weight: 800;
-                src: url('/{fontPath}/raleway-v28-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-            }
-
-
         </style>
     </f:comment>
 
