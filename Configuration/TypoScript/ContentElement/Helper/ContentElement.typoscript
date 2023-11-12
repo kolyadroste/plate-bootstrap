@@ -58,6 +58,8 @@ lib.contentElement {
         bsPublic.value = EXT:bootstrap_package/Resources/Public
         atomicBs = TEXT
         atomicBs.value = EXT:plate_atomic_assets/Resources/Public/atomic-bootstrap/Dist
+        atomicAssets = TEXT
+        atomicAssets.value = EXT:plate_atomic_assets/Resources/Public
 
         space_before_class = TEXT
         space_before_class.data = field:space_before_class

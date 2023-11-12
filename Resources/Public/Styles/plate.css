@@ -51,18 +51,18 @@ p > img[data-icon-base-name]{
 }
 @media screen and (min-width: 1200px) {
     .frame.-wider .frame-container{
-        max-width: 1400px;
+        max-width: var(--plate-framewidth-wider,1440px);
     }
     .frame.-slim .frame-container{
-        max-width: 1100px;
+        max-width: var(--plate-framewidth-slim,1100px);
     }
 }
 @media screen and (min-width: 992px) {
     .frame.-moreslim .frame-container{
-        max-width: 800px;
+        max-width: var(--plate-framewidth-moreslim,800px);
     }
     .frame.-veryslim .frame-container{
-        max-width: 600px;
+        max-width: var(--plate-framewidth-veryslim,600px);
     }
 }
 /* webcomponent  defaults*/

@@ -257,6 +257,16 @@ $lead-font-weight:                  400 !default;
         --bs-h5-font-size: #{$h5-font-size};
     }
 }
+@media screen and (max-width: 767.98px){
+    :root {
+        --frame-outer-spacing-variant-small: 1.5rem;
+        --frame-outer-spacing-variant-medium: 2rem;
+        --frame-outer-spacing-variant-large: 2.5rem;
+        --frame-outer-spacing-variant-extra-large: 3.5rem;
+        --frame-outer-spacing-variant-xxl: 5rem;
+        --frame-outer-spacing-variant-xxxl: 6rem;
+    }
+}
 
 /* defaults webcomponents */
 atomic-offcanvas atomic-dropdown{
@@ -277,7 +287,7 @@ atomic-offcanvas atomic-dropdown{
 }
 
 /* set fonts white on colorized bgs */
-.-colorized:not(.bg-color--bs-light){
+.-colorized:not(.bg-color--bs-light):not(.frame-background-light){
     --frame-color: #ffffff;
     --frame-link-color: #eee ;
     --bs-link-color: #eee;

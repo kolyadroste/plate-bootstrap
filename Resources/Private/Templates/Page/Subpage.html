@@ -14,6 +14,12 @@
     <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '4', slide: '-1'}" />
 </f:section>
 
+<f:section name="SlidePostContent">
+    <f:if condition="!{disablePostContent}">
+        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '8', slide: '{slidePostContent}'}" />
+    </f:if>
+</f:section>
+
 <f:section name="Main">
     <f:variable name="headerContent" value="{f:cObject(typoscriptObjectPath:'lib.dynamicContent', data:'{pageUid: \'{data.uid}\', colPos: \'8\', slide: \'{slidePostContent}\'}')}"/>
     <f:if condition="!{disablePostContent}">

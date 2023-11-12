@@ -2,6 +2,7 @@
 <f:layout name="Default" />
 <f:section name="Main">
     <f:asset.css identifier="bs.pagination" href="{atomicBs}/components/pagination.css"/>
+    <f:asset.css identifier="bs.gallery" href="{atomicBs}/components/gallery.css"/>
     <bk2k:data.imageVariants as="variants" variants="{variants}" aspectRatio="{data.aspect_ratio as float}" />
     <f:variable name="itemsPerPage" value="{data.items_per_page as integer}" />
     <f:if condition="{itemsPerPage} <= 0"><f:variable name="itemsPerPage" value="10" /></f:if>

@@ -4,7 +4,10 @@
 <f:layout name="Default" />
 
 <f:section name="Main">
-    <f:asset.script src="EXT:plate_bootstrap/Resources/Public/JavaScript/ce_tabs.js" identifier="bs-tabs"/>
+    <f:asset.script identifier="bs.bootstrap" src="{bsPublic}/Contrib/bootstrap5/js/bootstrap.min.js"/>
+    <f:asset.css identifier="bs.tab" href="{atomicBs}/components/tab.css"/>
+    <f:asset.css identifier="bs.tab" href="{atomicBs}/components/navbar.css"/>
+    <f:asset.css identifier="bs.tab" href="{atomicBs}/components/nav.css"/>
     <div id="tabpanel-{data.uid}"
          class="ce-tabpanel tabpanel{f:if(condition:'{data.pi_flexform.style}', then:' {data.pi_flexform.style}')}"
          role="tabpanel">

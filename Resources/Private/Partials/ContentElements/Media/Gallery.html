@@ -6,8 +6,13 @@
     <bk2k:data.imageVariants as="variants" variants="{variants}" multiplier="{columnConfig.multiplier}" gutters="{columnConfig.gutters}" corrections="{columnConfig.corrections}" />
 
     <div class="gallery-row">
+        <f:variable name="gridNum" value="0"/>
         <f:for each="{files}" as="file" iteration="fileIteration">
-            <div class="gallery-item {columnConfig.class}">
+            <f:variable name="gridNum" value="{gridNum + 1}"/>
+            <f:if condition="{gridNum} >= 6">
+                <f:variable name="gridNum" value="1"/>
+            </f:if>
+            <div class="gallery-item {columnConfig.class} item-{fileIteration.cycle} gridnum-{fileIteration.cycle}">
                 <f:render partial="Media/Type" arguments="{file: file, data: data, settings: settings, variants: variants}" />
             </div>
         </f:for>

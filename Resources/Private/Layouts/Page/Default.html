@@ -36,9 +36,10 @@
             <footer id="page-footer" class="bp-page-footer position-relative" >
                 <f:render partial="DropIn/Structure/FooterBefore" arguments="{_all}" />
                 <f:render section="Footer" optional="true" />
-                <f:render partial="DropIn/Structure/FooterAfter" arguments="{_all}" />
+                <f:render partial="DropIn/Structure/FooterAfter" arguments="{_all}" optional="true"/>
             </footer>
             <f:render partial="DropIn/Page/PageAfter" arguments="{_all}" />
+
         </div>
     </atomic-stickystate>
     <atomic-scrolltotop></atomic-scrolltotop>
