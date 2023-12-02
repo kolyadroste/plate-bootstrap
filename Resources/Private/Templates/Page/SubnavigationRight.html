@@ -21,10 +21,6 @@
 </f:section>
 
 <f:section name="Main">
-
-    <f:if condition="!{disablePostContent}">
-        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '8', slide: '{slidePostContent}'}" />
-    </f:if>
     <f:if condition="!{disablePostContentSubpages}">
         <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '9', slide: '-1'}" />
     </f:if>
