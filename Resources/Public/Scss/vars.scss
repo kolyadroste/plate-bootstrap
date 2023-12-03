@@ -51,23 +51,7 @@ $secondary-hover:                         #e76f51 !default;
 $tertiary-hover:                          #f4a261 !default;
 $quaternary-hover:                        #e9c46a !default;
 
-$hover-shade-amount:       15% !default;
 $active-shade-amount:      20% !default;
-
-$primary-hover:                           shift-color($primary, $hover-shade-amount) !default;
-$secondary-hover:                         shift-color($secondary, $hover-shade-amount) !default;
-$tertiary-hover:                          shift-color($tertiary, $hover-shade-amount) !default;
-$quaternary-hover:                        shift-color($quarternary, $hover-shade-amount) !default;
-
-$default-hover:                     shade-color($default, $hover-shade-amount) !default;
-$success-hover:                     shade-color($success, $hover-shade-amount) !default;
-$info-hover:                        shade-color($info, $hover-shade-amount) !default;
-$warning-hover:                     shade-color($warning, $hover-shade-amount) !default;
-$danger-hover:                      shade-color($danger, $hover-shade-amount) !default;
-$lighter-hover:                     shade-color($lighter, $hover-shade-amount) !default;
-$light-hover:                       shade-color($light, $hover-shade-amount) !default;
-$dark-hover:                        shade-color($dark, $hover-shade-amount) !default;
-$darker-hover:                      shade-color($darker, $hover-shade-amount) !default;
 
 $link-color:                        $primary !default;
 
@@ -119,7 +103,7 @@ $lead-font-weight:                  400 !default;
     --bs-green: #198754;
     --bs-teal: #20c997;
     --bs-cyan: #0dcaf0;
-    --bs-black: #{black};
+    --bs-black: black;
     --bs-white: #{$white};
     --bs-gray: #{$gray-500};
     --bs-gray-dark: #313131;
@@ -146,19 +130,30 @@ $lead-font-weight:                  400 !default;
     --bs-dark: #{$dark};
     --bs-darker: #{$darker};
 
-    --bs-primary-hover: #{$primary-hover};
-    --bs-secondary-hover: #{$secondary-hover};
-    --bs-tertiary-hover: #{$tertiary-hover};
-    --bs-quaternary-hover: #{$quaternary-hover};
-    --bs-success-hover: #{$success-hover};
-    --bs-info-hover: #{$info-hover};
-    --bs-warning-hover: #{$warning-hover};
-    --bs-danger-hover: #{$danger-hover};
-    --bs-default-hover: #{$default-hover};
-    --bs-lighter-hover: #{$lighter-hover};
-    --bs-light-hover: #{$light-hover};
-    --bs-dark-hover: #{$dark-hover};
-    --bs-darker-hover: #{$darker-hover};
+    --bs-primary-hover: #{$hover-primary};
+    --bs-secondary-hover: #{$hover-secondary};
+    --bs-tertiary-hover: #{$hover-tertiary};
+    --bs-quaternary-hover: #{$hover-quaternary};
+    --bs-success-hover: #{$hover-success};
+    --bs-info-hover: #{$hover-info};
+    --bs-warning-hover: #{$hover-warning};
+    --bs-danger-hover: #{$hover-danger};
+    --bs-default-hover: #{$hover-default};
+    --bs-lighter-hover: #{$hover-lighter};
+    --bs-light-hover: #{$hover-light};
+    --bs-dark-hover: #{$hover-dark};
+    --bs-darker-hover: #{$hover-darker};
+
+    --bs-gray-100-hover: #{$hover-gray-100};
+    --bs-gray-200-hover: #{$hover-gray-200};
+    --bs-gray-300-hover: #{$hover-gray-300};
+    --bs-gray-400-hover: #{$hover-gray-400};
+    --bs-gray-500-hover: #{$hover-gray-500};
+    --bs-gray-600-hover: #{$hover-gray-600};
+    --bs-gray-700-hover: #{$hover-gray-700};
+    --bs-gray-800-hover: #{$hover-gray-800};
+    --bs-gray-900-hover: #{$hover-gray-900};
+    --bs-black-hover: #{$hover-black};
 
     --bs-primary-rgb: #{$primary-rgb};
     --bs-secondary-rgb: #{$secondary-rgb};

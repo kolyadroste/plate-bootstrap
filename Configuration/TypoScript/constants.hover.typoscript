@@ -1,0 +1,74 @@
+# CUSTOM SUBCATEGORIES
+# customsubcategory=bp5_001=Grayscale
+# customsubcategory=bp5_002=Colors
+# customsubcategory=bp5_003=Contrast
+# customsubcategory=bp5_004=Body
+# customsubcategory=bp5_005=Links
+# customsubcategory=bp5_006=Fonts
+# customsubcategory=bp5_007=Überschriften
+# customsubcategory=bp5_010=Options
+
+plugin.bootstrap_package {
+	settings {
+		scss {
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/001; type=string; label=$link-color:
+			link-color = $primary
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/002; type=string; label=$link-shade-percentage:
+			link-shade-percentage = 20%
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/003; type=string; label=$link-hover-color:
+			link-hover-color = shift-color($link-color, $link-shade-percentage)
+
+
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/001; type=string; label=$white:
+			hover-white = #eeeeee
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/002; type=string; label=$gray-100:
+			hover-gray-100 = #eeeeee
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/003; type=string; label=$gray-200:
+			hover-gray-200 = #dedede
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/004; type=string; label=$gray-300:
+			hover-gray-300 = #cecece
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/005; type=string; label=$gray-400:
+			hover-gray-400 = #ababab
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/006; type=string; label=$gray-500:
+			hover-gray-500 = #6c6c6c
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/007; type=string; label=$gray-600:
+			hover-gray-600 = #494949
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/008; type=string; label=$gray-700:
+			hover-gray-700 = #313131
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/009; type=string; label=$gray-800:
+			hover-gray-800 = #212121
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/010; type=string; label=$gray-900:
+			hover-gray-900 = #111111
+			# cat=bootstrap 5.x: styling-hovers/bp5_001/011; type=string; label=$black:
+			hover-black = #222222
+
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/001; type=string; label=$primary:
+			hover-primary = #1271AF
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/005; type=string; label=$secondary:
+			hover-secondary = #E85C39
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/007; type=string; label=$tertiary:
+			hover-tertiary = #E5E5E5
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/008; type=string; label=$quaternary:
+			hover-quaternary = #ECC054
+
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/009; type=string; label=$default:
+			hover-default = #E0E2E5
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/010; type=string; label=$success:
+			hover-success = #4CB64C
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/011; type=string; label=$info:
+			hover-info = $hover-gray-600
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/012; type=string; label=$warning:
+			hover-warning = #DA3D38
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/013; type=string; label=$danger:
+			hover-danger = #d9534f
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/014; type=string; label=$lighter:
+			hover-lighter = $hover-gray-100
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/015; type=string; label=$light:
+			hover-light = $hover-gray-200
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/016; type=string; label=$dark:
+			hover-dark = $hover-gray-800
+			# cat=bootstrap 5.x: styling-hovers/bp5_002/017; type=string; label=$darker:
+			hover-darker = $hover-gray-900
+		}
+	}
+}

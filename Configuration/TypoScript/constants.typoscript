@@ -131,3 +131,4 @@ plugin.bootstrap_package {
 
 @import './constants.autosets.typoscript'
 @import './constants.container.typoscript'
+@import './constants.hover.typoscript'
